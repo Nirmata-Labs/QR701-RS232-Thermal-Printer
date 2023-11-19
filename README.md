@@ -8,7 +8,8 @@ The QR701 thermal printer is a compact and versatile printing solution that can 
 
 ## QR701 TTL vs. QR701 RS232 Thermal Printers
 
-When choosing a thermal printer for your project, you may encounter different variants, such as the QR701 TTL and QR701 RS232. Here are the key differences between the two:
+When choosing a thermal printer for your project, you may encounter different variants, such as the QR701 TTL and QR701 RS232. 
+**You can not use the RS232-version without any converter!** Here are the key differences between the two:
 
 ### QR701 TTL Thermal Printer
 
@@ -39,8 +40,11 @@ The QR701 thermal printer is known for its:
 
 ## Hardware Setup
 
+### RS232 to TTL Converter with cable interface
 ![GPIO-Connection](https://github.com/RaccoonAI/QR701-RS232-Thermal-Printer/blob/main/images/QR701-Connection.png)
 
+### Mini RS232 to TTL Converter 
+![GPIO-Connection](https://github.com/RaccoonAI/QR701-RS232-Thermal-Printer/blob/main/images/QR701-Connector-Small-Module.png)
 
 ### GPIO-Pin Connections
 
@@ -52,12 +56,12 @@ The QR701 thermal printer is known for its:
 | GND         | GND         | GND       |
 | VCC (5V)    | 5V          | 5V        |
 
-**Microcontroller to RS232-TTL-Converter:**
-|QR701 Pin   | RS232-TTL-Converter | 
-|-------------|-------------|
-| TX (Data In) | 3          | 
-| RX (Data Out)| 4          | 
-| GND         | 1         | 
+**Microcontroller to RS232-TTL-Converter :**
+|QR701 Pin   | RS232-TTL-Converter | Mini RS232-TTL-Converter | 
+|-------------|-------------|-------------|
+| TX (Data In) | 3          |  TXD          | 
+| RX (Data Out)| 4          |  RXD          | 
+| GND         | 1         |  GND          | 
 
 **Power Source:**
 | QR701 Pin   | Power Source |
