@@ -4,6 +4,29 @@
 
 The QR701 thermal printer is a compact and versatile printing solution that can be easily integrated with Arduino and Wemos platforms. This guide provides instructions on how to set up and use the QR701 thermal printer.
 
+## QR701 TTL vs. QR701 RS232 Thermal Printers
+
+When choosing a thermal printer for your project, you may encounter different variants, such as the QR701 TTL and QR701 RS232. Here are the key differences between the two:
+
+### QR701 TTL Thermal Printer
+
+The QR701 TTL variant is designed to work with microcontrollers and devices that support TTL-level serial communication. TTL, or Transistor-Transistor Logic, refers to the logic levels used in digital circuits.
+
+- **Compatibility:** Ideal for use with microcontrollers like Arduino, Raspberry Pi, and similar devices.
+- **Communication Interface:** Uses TTL-level serial communication.
+- **Voltage Level:** Operates at logic level voltages (usually 3.3V or 5V).
+- **Wiring:** Connects directly to the TX and RX pins of the microcontroller.
+
+### QR701 RS232 Thermal Printer
+
+The QR701 RS232 variant, on the other hand, is designed to work with devices that support RS232 serial communication. RS232 is a standard for serial communication transmission of data.
+
+- **Compatibility:** Suitable for devices with RS232 serial ports, such as computers, industrial equipment, and certain communication modules.
+- **Communication Interface:** Uses RS232-level serial communication.
+- **Voltage Level:** Operates at higher voltage levels (commonly -12V to +12V).
+- **Wiring:** Requires a voltage level shifter or converter to interface with microcontrollers.
+
+
 ## Basics of QR701 Thermal Printer
 
 The QR701 thermal printer is known for its:
@@ -14,19 +37,35 @@ The QR701 thermal printer is known for its:
 
 ## Hardware Setup
 
+![GPIO-Connection](https://github.com/RaccoonAI/QR701-RS232-Thermal-Printer/blob/main/images/QR701-Connection.png)
 
 
 ### GPIO-Pin Connections
 
-| QR701 Pin   | Arduino Pin | Wemos Pin |
+**Microcontroller to RS232-TTL-Converter:**
+| RS232-TTL-Converter  | Arduino Pin | Wemos Pin |
 |-------------|-------------|-----------|
-| TX (Data In) | 10          | D3        |
-| RX (Data Out)| 11          | D4        |
+| TX (Data In) | 6          | TX        |
+| RX (Data Out)| 5          | RX        |
 | GND         | GND         | GND       |
 | VCC (5V)    | 5V          | 5V        |
 
-**Note:** Ensure that the voltage levels are compatible between the QR701 and your microcontroller (Arduino/Wemos).
+**Microcontroller to RS232-TTL-Converter:**
+|QR701 Pin   | RS232-TTL-Converter | 
+|-------------|-------------|
+| TX (Data In) | 3          | 
+| RX (Data Out)| 4          | 
+| GND         | 1         | 
+
+**Power Source:**
+| QR701 Pin   | Power Source |
+|-------------|-------------|
+| VH (9V)    | 9V          | 
+| GND    | GND          | 
+
+**Note:** It can be used with a power supply from 5 to 9V. At low voltage (5V), the print image is very weak and printing is slow. 
 
 ## Software Setup
 
+**Note:** When using the Arduino 9V power supply, the power supply must be deactivated during programming, otherwise the microcontroller will not appear at the port.
 
