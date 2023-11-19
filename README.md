@@ -1,5 +1,7 @@
 # QR701 Thermal Printer with RS232 Interface
 
+![Overview](https://github.com/RaccoonAI/QR701-RS232-Thermal-Printer/blob/main/images/QR701-Overview.png)
+
 ## Overview
 
 The QR701 thermal printer is a compact and versatile printing solution that can be easily integrated with Arduino and Wemos platforms. This guide provides instructions on how to set up and use the QR701 thermal printer.
