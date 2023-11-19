@@ -69,7 +69,7 @@ The QR701 thermal printer is known for its:
 | VH (9V)    | 9V          | 
 | GND    | GND          | 
 
-**Note:** It can be used with a power supply from 5 to 9V. At low voltage (5V), the print image is very weak and printing is slow. 
+**Note:** Printer can be powerd in a range from 5 to 9V. At low voltage (5V), the print image is very weak and printing is slow. 
 
 ## Software Setup
 
